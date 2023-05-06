@@ -14,7 +14,7 @@ public class AnggotaDaoImpl implements AnggotaDao {
     
     public AnggotaDaoImpl(){
         data.add(new Anggota("1111", "Ali", "Padang"));
-        data.add(new Anggota("1112", "Rizky", "Padang panjang"));
+        data.add(new Anggota("1112", "rell", "Bukittinggi"));
         data.add(new Anggota("1113", "Razor", "Padang"));
     }
     
