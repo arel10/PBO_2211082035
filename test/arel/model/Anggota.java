@@ -13,6 +13,9 @@ public class Anggota {
     private String namaanggota;
     private String alamat;
     private String jenis_kelamin;
+    
+    public Anggota(){
+    }
 
     public Anggota(String kodeanggota, String namaanggota, String alamat, String jenis_kelamin) {
         this.kodeanggota = kodeanggota;
@@ -51,10 +54,5 @@ public class Anggota {
 
     public void setJenis_kelamin(String jenis_kelamin) {
         this.jenis_kelamin = jenis_kelamin;
-    }
-    
-    
-
-
-    
+    }  
 }

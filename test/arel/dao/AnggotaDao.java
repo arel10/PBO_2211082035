@@ -12,4 +12,5 @@ import arel.model.Anggota;
  */
 public interface AnggotaDao {
     void insert (Anggota anggota) throws Exception;
+    
 }
