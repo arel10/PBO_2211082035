@@ -5,6 +5,7 @@
 package arel.dao;
 
 import arel.model.Anggota;
+import java.util.List;
   
 /**
  *
@@ -12,5 +13,13 @@ import arel.model.Anggota;
  */
 public interface AnggotaDao {
     void insert (Anggota anggota) throws Exception;
+
+    public void update(String kode, Anggota anggota);
+
+    public Anggota getAnggota(String kode);
+
+    public void delete(String kode);
+
+    public List<Anggota> getAll();
     
 }
