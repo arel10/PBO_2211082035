@@ -5,8 +5,12 @@
         <group>
             <file>file:/D:/PBO/PBO_2211082035/test/arel/model/peminjaman.java</file>
             <file>file:/D:/PBO/PBO_2211082035/test/arel/model/Anggota.java</file>
+            <file>file:/D:/PBO/PBO_2211082035/test/arel/review/FormAnggota.java</file>
+            <file>file:/D:/PBO/PBO_2211082035/test/arel/controller/AnggotaController.java</file>
+            <file>file:/D:/PBO/PBO_2211082035/test/arel/model/peminjamanDao.java</file>
             <file>file:/D:/PBO/PBO_2211082035/test/arel/dao/AnggotaDaoImpl.java</file>
             <file>file:/D:/PBO/PBO_2211082035/test/arel/dao/AnggotaDao.java</file>
+            <file>file:/D:/PBO/PBO_2211082035/test/arel/model/peminjamanDaoImpl.java</file>
         </group>
     </open-files>
 </project-private>
