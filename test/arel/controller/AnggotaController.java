@@ -5,14 +5,13 @@
 package arel.controller;
 import arel.model.*;
 import arel.dao.*;
-import arel.review.*;
 import java.sql.Connection;
 import javax.swing.table.DefaultTableModel;
 import java.util.*;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import arel.db.DbHelper;
-import arel.review.FormAnggota;
+import arel.view.FormAnggota;
 /**
  *
  * @author Acer
@@ -86,7 +85,7 @@ public class AnggotaController {
             anggota.setKodeanggota(view.getTxtKodeAnggota().getText());
             anggota.setNamaanggota(view.getTxtNamaAnggota().getText());
             anggota.setAlamat(view.getTxtAlamat().getText());
-            anggota.setJenis_kelamin(view.getCboJenis_Kelamin().getSelectedItem().toString());
+            anggota.setJeniskelamin(view.getCboJenisKelamin().getSelectedItem().toString());
             dao.update(kode, anggota);
             JOptionPane.showMessageDialog(view, "Update Data OK");
         } catch (Exception e) {
@@ -101,7 +100,7 @@ public class AnggotaController {
             view.getTxtKodeAnggota().setText(anggota.getKodeanggota());
             view.getTxtNamaAnggota().setText(anggota.getNamaanggota());
             view.getTxtAlamat().setText(anggota.getAlamat());
-            view.getCboJenis_Kelamin().setSelectedItem(anggota.getJenis_kelamin());
+            view.getCboJenisKelamin().setSelectedItem(anggota.getJeniskelamin());
         } catch (Exception e) {
             JOptionPane.showMessageDialog(view, e);
         }
