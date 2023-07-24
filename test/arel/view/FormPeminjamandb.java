@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package arel.review;
+package arel.view;
 
 import javax.swing.JComboBox;
 import javax.swing.JTable;
@@ -14,11 +14,10 @@ import arel.controller.*;
  *
  * @author ASUS
  */
-public class FormAnggota extends javax.swing.JFrame {
+public class FormPeminjamandb extends javax.swing.JFrame {
     AnggotaController ctrl;
-     public FormAnggota() {
+     public FormPeminjamandb() {
         initComponents();
-        ctrl = new AnggotaController(this);
         ctrl.clearForm();
         ctrl.tampil();
      }
@@ -27,23 +26,25 @@ public class FormAnggota extends javax.swing.JFrame {
      */
 
     public JComboBox<String> getCboJenisKelamin() {
-        return cboJenisKelamin;
+        return cboKodeBuku;
     }
 
     public JTable getTabelAnggota() {
-        return tabelAnggota;
+        return tabelPeminjaman;
     }
 
     public JTextField getTxtAlamat() {
-        return txtAlamat;
+        JTextField txtAlamat;
+        return null;
     }
 
     public JTextField getTxtKodeAnggota() {
-        return txtKodeAnggota;
+        return txtTglPinjam;
     }
 
     public JTextField getTxtNamaAnggota() {
-        return txtNamaAnggota;
+        JTextField txtNamaAnggota;
+        return null;
     }
     
     
@@ -62,16 +63,16 @@ public class FormAnggota extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        txtKodeAnggota = new javax.swing.JTextField();
-        txtNamaAnggota = new javax.swing.JTextField();
-        txtAlamat = new javax.swing.JTextField();
+        txtTglPinjam = new javax.swing.JTextField();
         btnInsert = new javax.swing.JButton();
         btnUpdate = new javax.swing.JButton();
         btnDelete = new javax.swing.JButton();
         btnCancel = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tabelAnggota = new javax.swing.JTable();
-        cboJenisKelamin = new javax.swing.JComboBox<>();
+        tabelPeminjaman = new javax.swing.JTable();
+        cboKodeBuku = new javax.swing.JComboBox<>();
+        cboKodeAnggota = new javax.swing.JComboBox<>();
+        txtTglKembali = new javax.swing.JTextField();
 
         jLabel1.setText("jLabel1");
 
@@ -80,43 +81,30 @@ public class FormAnggota extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
 
-        jLabel3.setText("Jenis Kelamin");
+        jLabel3.setText("TglKembali");
         getContentPane().add(jLabel3);
         jLabel3.setBounds(10, 100, 80, 20);
 
-        jLabel4.setText("Kode Anggota");
+        jLabel4.setText("KodeAnggota");
         getContentPane().add(jLabel4);
         jLabel4.setBounds(10, 10, 80, 20);
 
-        jLabel5.setText("Nama Anggota");
+        jLabel5.setText("KodeBuku");
         getContentPane().add(jLabel5);
         jLabel5.setBounds(10, 40, 80, 20);
 
-        jLabel6.setText("Alamat");
+        jLabel6.setText("TglPinjam");
         getContentPane().add(jLabel6);
         jLabel6.setBounds(10, 70, 80, 20);
 
-        txtKodeAnggota.setText("jTextField1");
-        txtKodeAnggota.addActionListener(new java.awt.event.ActionListener() {
+        txtTglPinjam.setText("jTextField1");
+        txtTglPinjam.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtKodeAnggotaActionPerformed(evt);
+                txtTglPinjamActionPerformed(evt);
             }
         });
-        getContentPane().add(txtKodeAnggota);
-        txtKodeAnggota.setBounds(100, 10, 310, 22);
-
-        txtNamaAnggota.setText("jTextField2");
-        getContentPane().add(txtNamaAnggota);
-        txtNamaAnggota.setBounds(100, 40, 290, 22);
-
-        txtAlamat.setText("jTextField3");
-        txtAlamat.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtAlamatActionPerformed(evt);
-            }
-        });
-        getContentPane().add(txtAlamat);
-        txtAlamat.setBounds(100, 70, 290, 22);
+        getContentPane().add(txtTglPinjam);
+        txtTglPinjam.setBounds(100, 70, 290, 26);
 
         btnInsert.setText("Insert");
         btnInsert.addActionListener(new java.awt.event.ActionListener() {
@@ -125,7 +113,7 @@ public class FormAnggota extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnInsert);
-        btnInsert.setBounds(10, 130, 72, 23);
+        btnInsert.setBounds(10, 130, 76, 27);
 
         btnUpdate.setText("Update");
         btnUpdate.addActionListener(new java.awt.event.ActionListener() {
@@ -134,7 +122,7 @@ public class FormAnggota extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnUpdate);
-        btnUpdate.setBounds(110, 130, 72, 23);
+        btnUpdate.setBounds(110, 130, 76, 27);
 
         btnDelete.setText("Delete");
         btnDelete.addActionListener(new java.awt.event.ActionListener() {
@@ -143,7 +131,7 @@ public class FormAnggota extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnDelete);
-        btnDelete.setBounds(200, 130, 72, 23);
+        btnDelete.setBounds(200, 130, 76, 27);
 
         btnCancel.setText("Cancel");
         btnCancel.addActionListener(new java.awt.event.ActionListener() {
@@ -152,9 +140,9 @@ public class FormAnggota extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnCancel);
-        btnCancel.setBounds(300, 130, 72, 23);
+        btnCancel.setBounds(300, 130, 76, 27);
 
-        tabelAnggota.setModel(new javax.swing.table.DefaultTableModel(
+        tabelPeminjaman.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -162,7 +150,7 @@ public class FormAnggota extends javax.swing.JFrame {
                 {null, null, null, null}
             },
             new String [] {
-                "Kode Anggota", "Nama Anggota", "Alamat", "Jenis Kelamin"
+                "Kode Anggota", "Nama Anggota", "TglPinjam", "TglKembali"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -173,31 +161,40 @@ public class FormAnggota extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        tabelAnggota.addMouseListener(new java.awt.event.MouseAdapter() {
+        tabelPeminjaman.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tabelAnggotaMouseClicked(evt);
+                tabelPeminjamanMouseClicked(evt);
             }
         });
-        jScrollPane1.setViewportView(tabelAnggota);
+        jScrollPane1.setViewportView(tabelPeminjaman);
 
         getContentPane().add(jScrollPane1);
         jScrollPane1.setBounds(10, 170, 490, 210);
 
-        cboJenisKelamin.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        getContentPane().add(cboJenisKelamin);
-        cboJenisKelamin.setBounds(100, 100, 260, 22);
+        cboKodeBuku.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        getContentPane().add(cboKodeBuku);
+        cboKodeBuku.setBounds(100, 40, 260, 26);
+
+        cboKodeAnggota.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        getContentPane().add(cboKodeAnggota);
+        cboKodeAnggota.setBounds(100, 10, 260, 26);
+
+        txtTglKembali.setText("jTextField1");
+        txtTglKembali.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtTglKembaliActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txtTglKembali);
+        txtTglKembali.setBounds(100, 100, 290, 26);
 
         setSize(new java.awt.Dimension(552, 433));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtKodeAnggotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtKodeAnggotaActionPerformed
+    private void txtTglPinjamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTglPinjamActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtKodeAnggotaActionPerformed
-
-    private void txtAlamatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAlamatActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtAlamatActionPerformed
+    }//GEN-LAST:event_txtTglPinjamActionPerformed
 
     private void btnInsertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertActionPerformed
         // TODO add your handling code here:
@@ -213,10 +210,10 @@ public class FormAnggota extends javax.swing.JFrame {
         ctrl.tampil();
     }//GEN-LAST:event_btnUpdateActionPerformed
 
-    private void tabelAnggotaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelAnggotaMouseClicked
+    private void tabelPeminjamanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelPeminjamanMouseClicked
         // TODO add your handling code here:
         ctrl.getAnggota();
-    }//GEN-LAST:event_tabelAnggotaMouseClicked
+    }//GEN-LAST:event_tabelPeminjamanMouseClicked
 
     private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
         // TODO add your handling code here:
@@ -229,6 +226,10 @@ public class FormAnggota extends javax.swing.JFrame {
         ctrl.clearForm();
         ctrl.tampil();
     }//GEN-LAST:event_btnDeleteActionPerformed
+
+    private void txtTglKembaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTglKembaliActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtTglKembaliActionPerformed
 
     /**
      * @param args the command line arguments
@@ -247,20 +248,23 @@ public class FormAnggota extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FormAnggota.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FormPeminjamandb.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FormAnggota.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FormPeminjamandb.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FormAnggota.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FormPeminjamandb.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FormAnggota.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FormPeminjamandb.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FormAnggota().setVisible(true);
+                new FormPeminjamandb().setVisible(true);
             }
         });
     }
@@ -270,7 +274,8 @@ public class FormAnggota extends javax.swing.JFrame {
     private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnInsert;
     private javax.swing.JButton btnUpdate;
-    private javax.swing.JComboBox<String> cboJenisKelamin;
+    private javax.swing.JComboBox<String> cboKodeAnggota;
+    private javax.swing.JComboBox<String> cboKodeBuku;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -278,13 +283,16 @@ public class FormAnggota extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable tabelAnggota;
-    private javax.swing.JTextField txtAlamat;
-    private javax.swing.JTextField txtKodeAnggota;
-    private javax.swing.JTextField txtNamaAnggota;
+    private javax.swing.JTable tabelPeminjaman;
+    private javax.swing.JTextField txtTglKembali;
+    private javax.swing.JTextField txtTglPinjam;
     // End of variables declaration//GEN-END:variables
 
     public Object getCboJenis_Kelamin() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public Object getTblPeminjaman() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }

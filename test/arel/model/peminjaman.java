@@ -8,76 +8,52 @@ package arel.model;
  *
  * @author user
  */
-public class peminjaman {
-    private String KodeAnggota;
-    private String KodeBuku;
-    private String tglpinjam;
-    private String tglkembali;
-    private String kodeAnggota;
-    
-    public peminjaman(){
+public class Peminjaman {
+    private String kodeagg;
+    private String kodebuku;
+    private String tanggalPinjam;
+    private String tanggalKemabli;
+
+    public Peminjaman() {
     }
 
-    public peminjaman(String Kodeanggota, String KodeBuku, String tglpinjam, String tglkembali) {
-        this.KodeAnggota = KodeAnggota;
-        this.KodeBuku = KodeBuku;
-        this.tglpinjam = tglpinjam;
-        this.tglkembali = tglkembali;
+    public Peminjaman(String kodeagg, String kodebuku, String tanggalPinjam, String tanggalKemabli) {
+        this.kodeagg = kodeagg;
+        this.kodebuku = kodebuku;
+        this.tanggalPinjam = tanggalPinjam;
+        this.tanggalKemabli = tanggalKemabli;
     }
 
-    public String getKodeAnggota() {
-        return KodeAnggota;
+    public String getKodeagg() {
+        return kodeagg;
     }
 
-    public void setKodeAnggota(String kodeAnggota) {
-        this.kodeAnggota = kodeAnggota;
+    public void setKodeagg(String kodeagg) {
+        this.kodeagg = kodeagg;
     }
 
-    public String getKodeBuku() {
-        return KodeBuku;
+    public String getKodebuku() {
+        return kodebuku;
     }
 
-    public void setKodeBuku(String KodeBuku) {
-        this.KodeBuku = KodeBuku;
+    public void setKodebuku(String kodebuku) {
+        this.kodebuku = kodebuku;
     }
 
-    public String gettglpinjam() {
-        return tglpinjam;
+    public String getTanggalPinjam() {
+        return tanggalPinjam;
     }
 
-    public void settglpinjam(String tglpinjam) {
-        this.tglpinjam = tglpinjam;
+    public void setTanggalPinjam(String tanggalPinjam) {
+        this.tanggalPinjam = tanggalPinjam;
     }
 
-    public String gettglkembali() {
-        return tglkembali;
+    public String getTanggalKemabli() {
+        return tanggalKemabli;
     }
 
-    public void settglkembali(String tglkembali) {
-        this.tglkembali = tglkembali;
-    }  
-
-    String getKodeanggota() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public void setTanggalKemabli(String tanggalKemabli) {
+        this.tanggalKemabli = tanggalKemabli;
     }
 
-    String getKodeanggota() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    String getKodeanggota() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    String getKodebuku() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    String getTglpinjam() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    String getTglkembali() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
 }
