@@ -14,7 +14,7 @@ public class karyawan {
     private String golongan;
     private String jabatan;
     
-    public karyawan(){
+    public karyawan(String sudin, String padang, String y, String string, String string1, String emp, int par){
     }
     
     public karyawan(String nip, String golongan, String jabatan){
